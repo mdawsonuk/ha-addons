@@ -53,6 +53,8 @@ password: ''
 apks: []
 server:
   tcp_forwarding: false
+  trusted_user_ca_keys: ""
+  authorized_principals: []
 ```
 
 ### Option: `apks`
@@ -78,6 +80,14 @@ Some SSH server options.
 Specifies whether TCP forwarding is permitted or not.
 
 **Note**: _Enabling this option lowers the security of your SSH server! Nevertheless, this warning is debatable._
+
+#### Option `trusted_user_ca_keys`
+
+Sets the public key of an SSH certificate authority to trust.
+
+#### Option `authorized_principals`
+
+Sets the principals which can login as root to avoid having root as a certificate principal. Only in effect when `trusted_user_ca_keys` is set.
 
 ## Network
 
